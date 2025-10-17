@@ -1,0 +1,110 @@
+.tab-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin-bottom: 2.5rem;
+  padding: 0;
+  list-style: none;
+}
+
+.tab-list li {
+  position: relative;
+  list-style: none;
+  width: 60px;
+  height: 60px;
+  background: white;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  border-radius: 60px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+}
+
+.tab-list li::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 60px;
+  background: linear-gradient(45deg, var(--i), var(--j));
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.tab-list li::after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  width: 100%;
+  height: 100%;
+  border-radius: 60px;
+  background: linear-gradient(45deg, var(--i), var(--j));
+  transition: 0.5s;
+  filter: blur(15px);
+  z-index: -1;
+  opacity: 0;
+}
+
+.tab-list li:hover {
+  width: 160px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0);
+}
+
+.tab-list li:hover::before {
+  opacity: 1;
+}
+
+.tab-list li:hover::after {
+  opacity: 0.5;
+}
+
+.tab-list li .icon {
+  color: #777;
+  font-size: 1.75em;
+  transition: 0.5s;
+  transition-delay: 0.25s;
+}
+
+.tab-list li:hover .icon {
+  transform: scale(0);
+  color: #fff;
+  transition-delay: 0s;
+}
+
+.tab-list li span {
+  position: absolute;
+}
+
+.tab-list li .title {
+  color: #fff;
+  font-size: 1.1em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transform: scale(0);
+  transition: 0.5s;
+  transition-delay: 0s;
+}
+
+.tab-list li:hover .title {
+  transform: scale(1);
+  transition-delay: 0.25s;
+}
+
+/* Active state (stay expanded and colored) */
+.tab-list li.active {
+  width: 160px;
+}
+.tab-list li.active::before,
+.tab-list li.active::after {
+  opacity: 1;
+}
+.tab-list li.active .icon {
+  transform: scale(0);
+  color: #fff;
+}
+.tab-list li.active .title {
+  transform: scale(1);
+  color: #fff;
+}

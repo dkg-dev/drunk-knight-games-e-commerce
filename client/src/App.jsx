@@ -12,6 +12,11 @@ import Test from "./pages/test"
 import GameDetails from "./pages/GameDetails"
 import { CartProvider } from "./context/CartContext";
 import CartSidebar from "./components/CartSidebar";
+import OrderSuccess from "./pages/OrderSuccess";
+import OrderFailure from "./pages/OrderFailure";
+
+
+
 
 
 function App() {
@@ -31,6 +36,8 @@ function App() {
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/account" element={<Account />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/order-success" element={<OrderSuccess />} />
+          <Route path="/order-failure" element={<OrderFailure />} />
         </Routes>
         
       </Router>

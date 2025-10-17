@@ -20,7 +20,7 @@ function CheckoutForm({ clientSecret }) {
     const { error } = await stripe.confirmPayment({
       elements,
       confirmParams: {
-        return_url: `${window.location.origin}/order-success`,
+        return_url: "https://drunkknightgames.netlify.app/order-success",
       },
     });
 

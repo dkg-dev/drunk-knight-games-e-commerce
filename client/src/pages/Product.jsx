@@ -101,7 +101,10 @@ export default function Product() {
 
           <button
             onClick={() => addToCart(product)}
-            className="bg-white hover:bg-[#6B0899] hover:text-white font-semibold py-3 px-6 rounded-full w-full transition border-2 border-[#6B0899]"
+            className="text-white hover:text-purple-600 hover:border-purple-600 font-semibold py-3 px-6 rounded-full w-full transition border-2 border-gray-200"
+            style={{
+                background: "linear-gradient(90deg, #b888ef, #f8b286)",
+              }}
           >
             Add to Cart
           </button>

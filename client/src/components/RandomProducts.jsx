@@ -35,7 +35,10 @@ export default function RandomProducts() {
           {randomProducts.map((product) => (
             <div
               key={product.id}
-              className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition transform hover:-translate-y-1"
+              className="rounded-xl shadow-md overflow-hidden hover:shadow-xl transition transform hover:-translate-y-1"
+              style={{
+                background: "linear-gradient(90deg, #b888ef, #f8b286)"
+              }}
             >
               {product.image_url ? (
                 <img
@@ -48,18 +51,14 @@ export default function RandomProducts() {
                   No Image
                 </div>
               )}
-              <div className="p-6 text-left flex flex-col flex-grow">
-                <h3 className="text-xl font-semibold mb-2 text-[#6B0899]">
+              <div className="p-2 text-left flex flex-col flex-grow ">
+                <h3 className="text-xl font-semibold text-white">
                   {product.name}
                 </h3>
-                <p className="text-gray-600 mb-4 flex-grow">
-                  {product.description?.length > 100
-                    ? `${product.description.substring(0, 100)}...`
-                    : product.description}
-                </p>
+               
                 <Link
                   to={`/shop/${product.id}`}
-                  className="text-[#F4761B] font-medium hover:underline mt-auto"
+                  className="text-gray-200 font-medium hover:underline hover:text-purple-600 mt-auto"
                 >
                   View Details →
                 </Link>
